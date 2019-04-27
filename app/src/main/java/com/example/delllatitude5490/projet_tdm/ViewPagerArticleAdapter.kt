@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentManager
 class ViewPagerArticleAdapter(private val myContext: Context, fm: FragmentManager, internal var totalTabs: Int) :
     FragmentPagerAdapter(fm){
     override fun getItem(p0: Int): Fragment {
-        return ArticleFragment()
+        return ArticleFragment.newInstance(p0)
     }
 
     override fun getCount(): Int {

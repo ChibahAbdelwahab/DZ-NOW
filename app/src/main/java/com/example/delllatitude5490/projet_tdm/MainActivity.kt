@@ -14,6 +14,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -24,9 +25,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        tabs.addTab(tabs.newTab().setText("Tab1"))
-        tabs.addTab(tabs.newTab().setText("Tab2"))
-        tabs.addTab(tabs.newTab().setText("Tab3"))
+        for(item in DemoData.categories){
+            tabs.addTab(tabs.newTab().setText("Tabee"))
+        }
+        tabs.addTab(tabs.newTab().setText("Tabee"))
+
         tabs.tabGravity = TabLayout.GRAVITY_FILL
 
         tabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {

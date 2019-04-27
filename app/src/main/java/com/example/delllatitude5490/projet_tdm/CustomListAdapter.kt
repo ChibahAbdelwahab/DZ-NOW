@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.*
 import org.w3c.dom.Text
 
-class CustomListAdapter(var mcontext: Context, var ressource: Int, var items: List<Article>) :
+class CustomListAdapter(var mcontext: Context, var ressource: Int, var items: ArrayList<Article>) :
     ArrayAdapter<Article>(mcontext, ressource, items) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val layoutInflater: LayoutInflater = LayoutInflater.from(mcontext)
@@ -19,7 +19,7 @@ class CustomListAdapter(var mcontext: Context, var ressource: Int, var items: Li
         val content:TextView= view.findViewById(R.id.content)
         val date:TextView= view.findViewById(R.id.date)
 
-        var mItems = items[position]
+        var mItems = items.get(position)
 
         imageView.setImageDrawable(mcontext.resources.getDrawable(mItems.imageView))
         title.text = mItems.title
