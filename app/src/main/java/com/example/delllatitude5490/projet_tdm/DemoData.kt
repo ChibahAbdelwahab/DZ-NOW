@@ -21,10 +21,15 @@ class DemoData{
             list.add(Article("8","Title", "date ", "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ", R.drawable.img1))
             list.add(Article("9","Title", "date ", "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ", R.drawable.img1))
 
-            categories.addAll(5, listOf("Politique","Culture","Sport","Medecine","Autres"))
+
         }
         fun categories(): ArrayList<String>{
-            loadData()
+            categories.add("Sport")
+            categories.add("Technologie")
+            categories.add("Medecine")
+            categories.add("Economie")
+            categories.add("Politique")
+            categories.add("Autres")
             return categories
         }
     }
