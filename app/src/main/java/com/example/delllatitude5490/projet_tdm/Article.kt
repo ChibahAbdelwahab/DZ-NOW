@@ -5,8 +5,9 @@ import android.os.Parcelable
 import android.widget.ImageView
 import java.io.Serializable
 
-class Article(var category: String, var title: String,var  date: String, var content: String, var imageView: Int) :Parcelable{
+class Article(var category: String, var title: String,var  date: String, var content: String,var saved: String, var imageView: Int) :Parcelable{
     constructor(parcel: Parcel) : this(
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -20,6 +21,7 @@ class Article(var category: String, var title: String,var  date: String, var con
         parcel.writeString(title)
         parcel.writeString(date)
         parcel.writeString(content)
+        parcel.writeString(saved)
         parcel.writeInt(imageView)
     }
 
