@@ -18,10 +18,5 @@ class ReadingActivity : AppCompatActivity() {
         content.text = data.content
         image.setImageDrawable(this.resources.getDrawable(data.imageView))
         tvTitle.text = data.title
-
-        save.setOnClickListener {
-            save.setImageResource ( R.drawable.img1);
-        }
     }
-
 }
