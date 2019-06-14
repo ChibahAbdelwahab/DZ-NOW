@@ -1,9 +1,9 @@
-package com.example.delllatitude5490.projet_tdm
+package com.example.delllatitude5490.dz_now
 
-import android.app.FragmentManager
-import android.support.v7.app.FragmentPagerAdapter
+import android.content.Context
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentPagerAdapter
 
-import android.content.Context;
 
 class ViewPagerArticleAdapter(private val myContext: Context, fm: FragmentManager, internal var totalTabs: Int) :
     FragmentPagerAdapter(fm){

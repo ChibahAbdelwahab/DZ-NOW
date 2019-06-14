@@ -1,11 +1,10 @@
-package com.example.delllatitude5490.projet_tdm
+package com.example.delllatitude5490.dz_now
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import com.example.delllatitude5490.dz_now.R.id.content
 import kotlinx.android.synthetic.main.activity_reading.*
-import kotlinx.android.synthetic.main.activity_reading.view.*
-import kotlinx.android.synthetic.main.content_reading.*
+
 
 class ReadingActivity : AppCompatActivity() {
 
@@ -15,7 +14,7 @@ class ReadingActivity : AppCompatActivity() {
         var data: Article = intent.getParcelableExtra("data") as Article
 
         date.text = data.date
-        content.text = data.content
+//        content.text = data.content
         image.setImageDrawable(this.resources.getDrawable(data.imageView))
         tvTitle.text = data.title
 
