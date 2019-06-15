@@ -89,14 +89,15 @@
                     <ImageButton
                             android:layout_width="10dp"
                             android:layout_height="wrap_content" app:srcCompat="@android:drawable/ic_menu_share"
-                            android:id="@+id/share" android:layout_weight="1"
+                            android:id="@+id/btn_share" android:layout_weight="1"
                             android:onClick="shareClick"
                             android:background="@android:drawable/screen_background_light_transparent"/>
                     <ImageButton
                             android:layout_width="10dp"
-                            android:layout_height="wrap_content" app:srcCompat="@android:drawable/ic_menu_save"
-                            android:id="@+id/save" android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/btn_save" android:layout_weight="1"
                             android:onClick="saveClick"
+                            app:srcCompat="@android:drawable/btn_star_big_off"
                             android:background="@android:drawable/screen_background_light_transparent"/>
                 </LinearLayout>
             </LinearLayout>

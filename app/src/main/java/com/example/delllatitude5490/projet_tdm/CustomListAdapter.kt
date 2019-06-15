@@ -30,4 +30,5 @@ class CustomListAdapter(var mcontext: Context, var ressource: Int, var items: Ar
         return view
     }
 
+
 }

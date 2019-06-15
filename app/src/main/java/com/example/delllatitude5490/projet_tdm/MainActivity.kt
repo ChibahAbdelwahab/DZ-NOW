@@ -1,20 +1,11 @@
 package com.example.delllatitude5490.projet_tdm
 
-import android.support.design.widget.TabLayout
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
-
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ArrayAdapter
-
+import android.support.design.widget.TabLayout
+import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
         for(item in DemoData.categories()){
             tabs.addTab(tabs.newTab().setText(item.toString()))
         }
@@ -41,13 +31,14 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-
-        val adapter = ViewPagerArticleAdapter(this, supportFragmentManager, tabs.tabCount)
+        val adapter = ViewPagerArticleAdapter(baseContext, supportFragmentManager, tabs.tabCount)
         container.adapter = adapter
-
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
-
-
+        var onlysaved :Boolean = false;
+        floatingActionButton.setOnClickListener({
+            onlysaved=!onlysaved
+            container.adapter= ViewPagerArticleAdapter(baseContext, supportFragmentManager, tabs.tabCount)
+        })
     }
 
 

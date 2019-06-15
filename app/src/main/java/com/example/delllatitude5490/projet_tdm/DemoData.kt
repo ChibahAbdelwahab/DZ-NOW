@@ -1,6 +1,9 @@
 package com.example.delllatitude5490.projet_tdm
 
+import java.io.BufferedReader
+import java.io.File
 import java.util.*
+import com.google.gson.Gson
 
 class DemoData {
 
@@ -16,209 +19,232 @@ class DemoData {
         fun loadData() {
             list.add(
                 Article(
-                    "0",
+                    1,
+                    "false",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
-                    "0",
+                    2,
+                    "false",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
-                    "0",
+                    3,
+                    "false",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
-                    "1",
+                    4,
+                    "true",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
-                    "1",
+                    5,
+                    "true",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
-                    "1",
+                    6,
+                    "true",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
-                    "1",
+                    7,
+                    "true",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
-                    "1",
+                    8,
+                    "true",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
-                    "1",
+                    9,
+                    "true",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    10,
                     "2",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    11,
                     "2",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    12,
                     "2",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    13,
                     "3",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    14,
                     "3",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    15,
                     "3",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    16,
                     "4",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    17,
                     "5",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    18,
                     "5",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    19,
                     "5",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    20,
                     "6",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    21,
                     "7",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "false", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    22,
                     "8",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0", R.drawable.img1
+                    "true", R.drawable.img1
                 )
             )
             list.add(
                 Article(
+                    23,
                     "9",
                     "Title",
-                    "date ",
+                    "01-01-2019 ",
                     "lorem ipsum habibiw hqsdqs qsd qsdq sdqs dqs dqsd ",
-                    "0",
+                    "true",
                     R.drawable.img1
                 )
             )
@@ -234,8 +260,9 @@ class DemoData {
             categories.add("Economie")
             categories.add("Politique")
             categories.add("Autres")
-            categories.add("Sauvegardés")
             return categories
         }
+
     }
+
 }

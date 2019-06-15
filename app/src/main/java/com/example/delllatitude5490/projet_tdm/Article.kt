@@ -5,8 +5,10 @@ import android.os.Parcelable
 import android.widget.ImageView
 import java.io.Serializable
 
-class Article(var category: String, var title: String,var  date: String, var content: String,var saved: String, var imageView: Int) :Parcelable{
+class Article(var id: Int,var category: String, var title: String,var  date: String, var content: String,var saved: String, var imageView: Int) :Parcelable{
+
     constructor(parcel: Parcel) : this(
+        parcel.readInt(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -17,6 +19,7 @@ class Article(var category: String, var title: String,var  date: String, var con
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(id)
         parcel.writeString(category)
         parcel.writeString(title)
         parcel.writeString(date)
