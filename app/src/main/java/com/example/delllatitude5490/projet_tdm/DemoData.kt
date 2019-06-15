@@ -1,11 +1,13 @@
 package com.example.delllatitude5490.projet_tdm
 
+import android.content.Context
+import android.content.res.Resources
 import java.io.BufferedReader
 import java.io.File
 import java.util.*
 import com.google.gson.Gson
 
-class DemoData {
+class DemoData(val context: Context) {
 
     companion object {
         var list = ArrayList<Article>()
@@ -254,12 +256,13 @@ class DemoData {
 
         //TODO Activate/desactivate categories
         fun categories(): ArrayList<String> {
-            categories.add("Sport")
-            categories.add("Technologie")
-            categories.add("Medecine")
-            categories.add("Economie")
-            categories.add("Politique")
-            categories.add("Autres")
+            categories.add(App.context!!.getString(R.string.sport))
+            categories.add(App.context!!.getString(R.string.technologie))
+            categories.add(App.context!!.getString(R.string.medecine))
+            categories.add(App.context!!.getString(R.string.economie))
+            categories.add(App.context!!.getString(R.string.politique))
+            categories.add(App.context!!.getString(R.string.others
+            ))
             return categories
         }
 

@@ -1,8 +1,20 @@
 <resources>
-    <string name="app_name">DZ-NOW</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_reading">ReadingActivity</string>
-    <string name="large_text">
+    <string name="app_name" translatable="false">DZ-NOW</string>
+    <string name="title_activity_reading" translatable="false">Reading-Activity</string>
+    <string name="action_settings">Parametres</string>
+    <string name="find">Recherche</string>
+    <string name="categoryChoice">Choix des Catégories</string>
+    <string name="minutes">minutes</string>
+    <string name="sport">Sport</string>
+    <string name="technologie">Technologie</string>
+    <string name="medecine">Santé</string>
+    <string name="economie">Economie</string>
+    <string name="politique">Politique</string>
+    <string name="others">Autres</string>
+    <string name="saved">Sauvegardés</string>
+
+
+    <string name="large_text" translatable="false">
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
