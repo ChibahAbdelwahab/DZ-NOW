@@ -1,5 +1,6 @@
 package com.example.delllatitude5490.projet_tdm
 
+import android.util.Log
 import org.json.JSONArray
 import java.io.BufferedReader
 import java.io.File
@@ -262,7 +263,9 @@ class DemoData {
 
         }
 
-
+        fun setSelected(position:Int, selected:Boolean) {
+            categories[position].isSelected = selected
+        }
 
     }
 

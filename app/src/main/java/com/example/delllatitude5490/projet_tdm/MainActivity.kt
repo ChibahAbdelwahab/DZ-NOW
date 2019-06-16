@@ -52,10 +52,10 @@ class MainActivity : AppCompatActivity() {
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
         tabs.setupWithViewPager(container)
 
-        var categories = DemoData.categories()
+        var categories = DemoData.categories
         for ((index, item) in categories.withIndex()) {
             val data = DemoData.data(index)
-            adapter.addFragement(ArticleFragment.newInstance(data), item)
+            adapter.addFragement(ArticleFragment.newInstance(data), item.name)
         }
         adapter.notifyDataSetChanged()
         var clicked = false
