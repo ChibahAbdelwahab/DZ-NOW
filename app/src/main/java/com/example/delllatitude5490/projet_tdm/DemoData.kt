@@ -10,7 +10,16 @@ class DemoData {
 
     companion object {
         var list = ArrayList<Article>()
-        var categories = ArrayList<String>()
+        var categories = ArrayList<Category>()
+        init {
+            categories.add(Category(App.context!!.getString(R.string.sport),true,R.drawable.img1));
+            categories.add(Category(App.context!!.getString(R.string.technologie),true,R.drawable.img1))
+            categories.add(Category(App.context!!.getString(R.string.medecine),true,R.drawable.img1))
+            categories.add(Category(App.context!!.getString(R.string.economie),true,R.drawable.img1))
+            categories.add(Category(App.context!!.getString(R.string.politique),true,R.drawable.img1))
+            categories.add(Category(App.context!!.getString(R.string.others),true,R.drawable.img1))
+        }
+
         fun data(p0: Int): ArrayList<Article> {
             if (list.isEmpty()) loadData()
             //TODO Implement a filter
@@ -253,16 +262,7 @@ class DemoData {
 
         }
 
-        //TODO Activate/desactivate categories
-        fun categories(): ArrayList<String> {
-            categories.add("Sport")
-            categories.add("Technologie")
-            categories.add("Medecine")
-            categories.add("Economie")
-            categories.add("Politique")
-            categories.add("Autres")
-            return categories
-        }
+
 
     }
 

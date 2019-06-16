@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        for(item in DemoData.categories()){
+        for(item in DemoData.categories){
             if(item.isSelected)
             tabs.addTab(tabs.newTab().setText(item.name))
         }
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-        val adapter = ViewPagerArticleAdapter(baseContext, supportFragmentManager, tabs.tabCount)
+        val adapter = ViewPagerArticleAdapter(supportFragmentManager)
         container.adapter = adapter
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
         tabs.setupWithViewPager(container)
