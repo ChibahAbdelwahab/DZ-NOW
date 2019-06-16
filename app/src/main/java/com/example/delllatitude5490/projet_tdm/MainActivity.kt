@@ -48,5 +48,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        if(container.adapter!= null)
+            container.adapter!!.notifyDataSetChanged()
+    }
+
 
 }
