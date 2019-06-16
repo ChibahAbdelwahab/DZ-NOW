@@ -42,6 +42,10 @@ class ArticleFragment : Fragment() {
         return view
     }
 
+    override fun onResume() {
+        super.onResume()
+        adapter?.notifyDataSetChanged()
+    }
     fun showOnlySaved(saved: Boolean) {
         list.clear()
         if (saved)

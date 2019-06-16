@@ -20,7 +20,6 @@ class ReadingActivity : AppCompatActivity() {
         image.setImageDrawable(this.resources.getDrawable(data.imageView))
         tvTitle.text = data.title
         var saved: Boolean = data.saved.toBoolean()
-        Toast.makeText(getApplicationContext(), saved.toString(), Toast.LENGTH_SHORT).show();
         article_is_saved(saved)
 
         btn_save.setOnClickListener {
@@ -30,9 +29,19 @@ class ReadingActivity : AppCompatActivity() {
             val resultIntent = Intent()
             data.saved = saved.toString()
             DemoData.list[data.id - 1].saved = saved.toString()
+            if (saved)
+                Toast.makeText(getApplicationContext(), getString(R.string.article_was_saved), Toast.LENGTH_SHORT).show();
 
         }
-
+        btn_share1.setOnClickListener{
+            Toast.makeText(getApplicationContext(), getString(R.string.available_next_version), Toast.LENGTH_SHORT).show();
+        }
+        btn_share2.setOnClickListener{
+            Toast.makeText(getApplicationContext(), getString(R.string.available_next_version), Toast.LENGTH_SHORT).show();
+        }
+        btn_share3.setOnClickListener{
+            Toast.makeText(getApplicationContext(), getString(R.string.available_next_version), Toast.LENGTH_SHORT).show();
+        }
     }
 
 

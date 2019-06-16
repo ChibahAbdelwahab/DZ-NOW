@@ -20,30 +20,43 @@
     </android.support.v7.widget.CardView>
     <TextView
             android:text="TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="214dp"
             android:layout_height="wrap_content" android:layout_alignParentStart="true"
             android:layout_marginStart="81dp" android:layout_alignParentLeft="true" android:layout_alignTop="@+id/image"
             android:id="@+id/title"
             android:layout_marginLeft="81dp" android:textStyle="bold"
             android:textSize="18sp" android:layout_marginTop="7dp" android:textColor="@android:color/background_dark"
-            app:fontFamily="monospace"/>
+            app:fontFamily="monospace" android:maxWidth="200dp" android:maxHeight="20dp"/>
     <TextView
             android:text="Lorem ipsum exqdsqsdqsd qsd qsd q"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:layout_alignParentTop="true"
+            android:layout_height="25dp" android:layout_alignParentTop="true"
             android:id="@+id/content"
             android:layout_marginTop="37dp"
             android:layout_alignStart="@+id/title" android:textSize="20sp"
             android:ellipsize="end"
             android:maxLines="1" android:layout_alignLeft="@+id/title" tools:ignore="RtlCompat"
-            android:textColor="?attr/actionModeSplitBackground"/>
+            android:textColor="?attr/actionModeSplitBackground" android:maxHeight="25dp"/>
     <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/date"
             android:textStyle="bold|italic"
-            android:layout_marginTop="4dp"
             android:textColor="@android:color/darker_gray" android:layout_alignParentEnd="true"
-            android:layout_marginEnd="11dp" android:layout_alignParentRight="true" android:layout_marginRight="11dp"/>
+            android:layout_marginEnd="22dp" android:layout_alignParentRight="true" android:layout_marginRight="22dp"
+    />
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/bookmark"
+            android:id="@+id/bookmark" android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/title" android:layout_marginTop="-4dp" android:layout_marginEnd="4dp"
+            android:layout_alignParentRight="true" android:layout_marginRight="4dp" android:layout_marginLeft="62dp"
+            android:layout_marginStart="62dp" android:layout_alignLeft="@+id/date"
+            android:layout_alignStart="@+id/date" android:visibility="invisible"/>
+    <View style="@style/Divider.Horizontal"
+          android:layout_alignParentStart="true"
+          android:layout_marginLeft="50dp"
+          android:background="@color/colorAccent"
+          android:layout_alignParentBottom="true"/>
 </RelativeLayout>

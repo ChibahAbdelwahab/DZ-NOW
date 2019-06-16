@@ -32,16 +32,21 @@ class ArticleListAdapter(
         p0?.date.text = article.date
         p0?.content.text = article.content
         p0?.image.setImageDrawable(context.getDrawable(article.imageView))
+        if (article.saved == "true"){
+            p0?.bookmark.visibility = View.VISIBLE
+        }
+        else
+            p0?.bookmark.setVisibility(View.INVISIBLE)
 
         p0?.itemView.setOnClickListener(clickListener)
     }
 
-    class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var title = itemView.findViewById(R.id.title) as TextView
         var content = itemView.findViewById(R.id.content) as TextView
         var date = itemView.findViewById(R.id.date) as TextView
         val image = itemView.findViewById(R.id.image) as ImageView
-
+        val bookmark = itemView.findViewById(R.id.bookmark) as ImageView
     }
 }
