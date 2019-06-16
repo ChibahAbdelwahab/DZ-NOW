@@ -1,26 +1,19 @@
 package com.example.delllatitude5490.projet_tdm
 
-import android.app.Activity
 import android.content.Context
-import android.content.Intent
-import android.support.v7.content.res.AppCompatResources
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.graphics.drawable.Drawable
-import android.support.v4.content.ContextCompat
 import android.widget.Toast
-import kotlinx.android.synthetic.main.fragment_article.*
-import kotlin.coroutines.coroutineContext
 
 
 class ArticleListAdapter(
     val context: Context,
     var list: List<Article>,
-    val clickListener: (Int) -> Unit
+    val clickListener: View.OnClickListener
 ) : RecyclerView.Adapter<ArticleListAdapter.ArticleViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ArticleViewHolder {
@@ -30,7 +23,7 @@ class ArticleListAdapter(
     }
 
     override fun getItemCount(): Int {
-        return list.size;
+        return list.size
     }
 
     override fun onBindViewHolder(p0: ArticleViewHolder, p1: Int) {
@@ -39,10 +32,8 @@ class ArticleListAdapter(
         p0?.date.text = article.date
         p0?.content.text = article.content
         p0?.image.setImageDrawable(context.getDrawable(article.imageView))
-        p0?.itemView.setOnClickListener {
-           Toast.makeText(context, "Hello toast!" , Toast.LENGTH_SHORT).show();
 
-        }
+        p0?.itemView.setOnClickListener(clickListener)
     }
 
     class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){

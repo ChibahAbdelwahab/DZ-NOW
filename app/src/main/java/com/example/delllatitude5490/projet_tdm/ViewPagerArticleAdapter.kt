@@ -8,9 +8,9 @@ class ViewPagerArticleAdapter(fm: FragmentManager) :
     FragmentPagerAdapter(fm) {
     private var lstTitles: ArrayList<String> = ArrayList<String>();
 
-    var lstFragment: ArrayList<Fragment> = ArrayList<Fragment>();
+    var lstFragment: ArrayList<ArticleFragment> = ArrayList();
     override fun getItem(p0: Int): Fragment {
-        return lstFragment.get(p0)
+        return lstFragment[p0]
     }
 
 

@@ -9,40 +9,51 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_article.*
 import kotlinx.android.synthetic.main.fragment_article.view.*
-import com.example.delllatitude5490.projet_tdm.R.id.recyclerView
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.widget.Toast
 
 
-class ArticleFragment() : Fragment() {
-    private lateinit var list: ArrayList<Article>;
-    private var clickedItem: Int = 0;
-    private var adapter: ArticleListAdapter? = null;
-
+class ArticleFragment : Fragment() {
+    private var list: ArrayList<Article> = ArrayList()
+    private var clickedItem: Int = 0
+    private var adapter: ArticleListAdapter? = null
+    private var defaultList: ArrayList<Article> = ArrayList()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        list = arguments?.getParcelableArrayList<Article>("data")!!
-
+        defaultList = arguments?.getParcelableArrayList<Article>("data")!!
+        list = ArrayList(defaultList)
         var view = inflater!!.inflate(R.layout.fragment_article, container, false)
-        adapter = ArticleListAdapter(activity!!.baseContext, list,clickListener = {clickedItem(it)})
-        view.recyclerView.adapter = adapter
-
-        view.recyclerView.setHasFixedSize(true);
-        val linearLayoutManager = LinearLayoutManager(context)
-        linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
-        view.recyclerView.layoutManager = linearLayoutManager
-
-
-        view.recyclerView.setOnClickListener() {
-            val itemPosition = recyclerView.getChildLayoutPosition(view)
-            val item = list.get(itemPosition)
+        adapter = ArticleListAdapter(activity!!.baseContext, list, clickListener = View.OnClickListener {
+            val itemPosition = view.recyclerView.getChildLayoutPosition(it)
+            val item = list[itemPosition]
 
             val intent = Intent(activity, ReadingActivity::class.java)
             intent.putExtra("data", item)
             clickedItem = itemPosition
             activity?.startActivityForResult(intent, Activity.RESULT_OK)
-            Toast.makeText(context, "Hello toast!" + item.date, Toast.LENGTH_SHORT).show();
-        }
+        })
+        view.recyclerView.adapter = adapter
+
+        view.recyclerView.setHasFixedSize(true)
+        val linearLayoutManager = LinearLayoutManager(context)
+        linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
+        view.recyclerView.layoutManager = linearLayoutManager
+
         return view
+    }
+
+    fun showOnlySaved(saved: Boolean) {
+        list.clear()
+        if (saved)
+            for (item in defaultList) {
+                if (item.saved == "true")
+                    list.add(item)
+            }
+        else
+            list.addAll(defaultList)
+
+        if (adapter !=null)
+            adapter!!.notifyDataSetChanged()
     }
 
     companion object {
@@ -55,18 +66,6 @@ class ArticleFragment() : Fragment() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        adapter?.notifyDataSetChanged()
-    }
-
-    fun itemClicked(position:Int){
-        Toast.makeText(context, "Hello toast!" , Toast.LENGTH_SHORT).show();
-    }
-
 
 }
 
-private operator fun Int.invoke(it: Int) {
-
-}

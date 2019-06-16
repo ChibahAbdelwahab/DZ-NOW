@@ -30,6 +30,7 @@ class ReadingActivity : AppCompatActivity() {
             val resultIntent = Intent()
             data.saved = saved.toString()
             DemoData.list[data.id - 1].saved = saved.toString()
+
         }
 
     }
