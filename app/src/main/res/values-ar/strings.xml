@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">المعلمات</string>
+    <string name="find">بحث</string>
+    <string name="categoryChoice">اختيار الفئات</string>
+    <string name="minutes">دقائق</string>
+    <string name="sport">رياضة</string>
+    <string name="technologie">تكنولوجيا</string>
+    <string name="medecine">صحة</string>
+    <string name="economie">اقتصاد</string>
+    <string name="politique">سياسة</string>
+    <string name="others">آخر</string>
+    <string name="saved">حفظ</string>
+    <string name="select_categories">اختر الفئات</string>
+</resources>
