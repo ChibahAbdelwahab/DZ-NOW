@@ -16,7 +16,7 @@ class SettingsActivity : AppCompatActivity() {
         val rv = findViewById<RecyclerView>(R.id.recyclerView)
         rv.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
-        val adapter = CustomAdapter(DemoData.categories())
+        val adapter = CustomAdapter(DemoData.categories)
         rv.adapter = adapter
 
         Log.e("message", "heeeere98")
