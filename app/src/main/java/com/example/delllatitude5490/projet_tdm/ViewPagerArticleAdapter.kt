@@ -1,18 +1,30 @@
 package com.example.delllatitude5490.projet_tdm
 
-import android.support.v4.app.FragmentPagerAdapter
-import android.content.Context;
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentPagerAdapter
 
-class ViewPagerArticleAdapter(private val myContext: Context, fm: FragmentManager, internal var totalTabs: Int) :
-    FragmentPagerAdapter(fm){
+class ViewPagerArticleAdapter(fm: FragmentManager) :
+    FragmentPagerAdapter(fm) {
+    private var lstTitles: ArrayList<String> = ArrayList<String>();
+
+    var lstFragment: ArrayList<Fragment> = ArrayList<Fragment>();
     override fun getItem(p0: Int): Fragment {
-        return ArticleFragment.newInstance(p0)
+        return lstFragment.get(p0)
     }
 
+
     override fun getCount(): Int {
-       return totalTabs
+        return lstTitles.size;
+    }
+
+    fun addFragement(fragment: ArticleFragment, title: String) {
+        lstFragment.add(fragment)
+        lstTitles.add(title)
+    }
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        return lstTitles.get(position)
     }
 
 }

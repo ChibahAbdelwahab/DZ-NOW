@@ -3,7 +3,6 @@ package com.example.delllatitude5490.projet_tdm
 import java.io.BufferedReader
 import java.io.File
 import java.util.*
-import com.google.gson.Gson
 
 class DemoData {
 

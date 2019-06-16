@@ -1,17 +1,27 @@
 package com.example.delllatitude5490.projet_tdm
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.support.v7.content.res.AppCompatResources
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.graphics.drawable.Drawable
+import android.support.v4.content.ContextCompat
+import android.widget.Toast
+import kotlinx.android.synthetic.main.fragment_article.*
+import kotlin.coroutines.coroutineContext
 
-class ArticleListAdapter(list: List<Article>) : RecyclerView.Adapter<ArticleListAdapter.ArticleViewHolder>() {
 
-    private lateinit var context: Context;
-    private lateinit var list: List<Article>;
+class ArticleListAdapter(
+    val context: Context,
+    var list: List<Article>,
+    val clickListener: (Int) -> Unit
+) : RecyclerView.Adapter<ArticleListAdapter.ArticleViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ArticleViewHolder {
         val v = LayoutInflater.from(p0?.context).inflate(R.layout.customlistitem, p0, false)
@@ -20,7 +30,7 @@ class ArticleListAdapter(list: List<Article>) : RecyclerView.Adapter<ArticleList
     }
 
     override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return list.size;
     }
 
     override fun onBindViewHolder(p0: ArticleViewHolder, p1: Int) {
@@ -28,13 +38,19 @@ class ArticleListAdapter(list: List<Article>) : RecyclerView.Adapter<ArticleList
         p0?.title.text = article.title
         p0?.date.text = article.date
         p0?.content.text = article.content
-        p0?.image.setImageDrawable(context.resources.getDrawable(article.imageView))
+        p0?.image.setImageDrawable(context.getDrawable(article.imageView))
+        p0?.itemView.setOnClickListener {
+           Toast.makeText(context, "Hello toast!" , Toast.LENGTH_SHORT).show();
+
+        }
     }
 
-    class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+
         var title = itemView.findViewById(R.id.title) as TextView
         var content = itemView.findViewById(R.id.content) as TextView
         var date = itemView.findViewById(R.id.date) as TextView
         val image = itemView.findViewById(R.id.image) as ImageView
+
     }
 }
