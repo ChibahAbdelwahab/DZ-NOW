@@ -44,10 +44,5 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
     </android.support.v4.view.ViewPager>
-    <android.support.design.widget.FloatingActionButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true" app:srcCompat="@android:drawable/btn_star_big_on"
-            android:id="@+id/floatingActionButton"/>
 
 </android.support.design.widget.CoordinatorLayout>

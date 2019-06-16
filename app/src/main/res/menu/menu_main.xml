@@ -2,8 +2,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.delllatitude5490.projet_tdm.MainActivity" >
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
+
+    <item
+            android:onClick="goToSetting"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:id="@+id/action_settings"
+            android:title=""
+            android:orderInCategory="100"
+            app:showAsAction="always" />
 </menu>

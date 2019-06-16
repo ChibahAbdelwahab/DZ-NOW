@@ -2,16 +2,28 @@ package com.example.delllatitude5490.projet_tdm
 
 import android.content.Context
 import android.content.res.Resources
+import android.util.Log
 import java.io.BufferedReader
 import java.io.File
 import java.util.*
 import com.google.gson.Gson
+import kotlin.collections.ArrayList
 
 class DemoData(val context: Context) {
 
+
     companion object {
         var list = ArrayList<Article>()
-        var categories = ArrayList<String>()
+        var categories = ArrayList<Category>()
+        init {
+            categories.add(Category(App.context!!.getString(R.string.sport),true,R.drawable.img1));
+            categories.add(Category(App.context!!.getString(R.string.technologie),true,R.drawable.img1))
+            categories.add(Category(App.context!!.getString(R.string.medecine),true,R.drawable.img1))
+            categories.add(Category(App.context!!.getString(R.string.economie),true,R.drawable.img1))
+            categories.add(Category(App.context!!.getString(R.string.politique),true,R.drawable.img1))
+            categories.add(Category(App.context!!.getString(R.string.others),true,R.drawable.img1))
+        }
+
         fun data(p0: Int): ArrayList<Article> {
             if (list.isEmpty()) loadData()
             //TODO Implement a filter
@@ -255,15 +267,13 @@ class DemoData(val context: Context) {
         }
 
         //TODO Activate/desactivate categories
-        fun categories(): ArrayList<String> {
-            categories.add(App.context!!.getString(R.string.sport))
-            categories.add(App.context!!.getString(R.string.technologie))
-            categories.add(App.context!!.getString(R.string.medecine))
-            categories.add(App.context!!.getString(R.string.economie))
-            categories.add(App.context!!.getString(R.string.politique))
-            categories.add(App.context!!.getString(R.string.others
-            ))
-            return categories
+        fun categories(): ArrayList<Category> {
+            return this.categories
+        }
+
+        fun setSelected(position:Int, selected:Boolean) {
+            categories[position].isSelected = selected
+            Log.e("Categorieeee", "$position  $selected")
         }
 
     }

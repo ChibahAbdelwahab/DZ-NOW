@@ -5,4 +5,5 @@
     <color name="colorAccent">#b6b6b6</color>
     <color name="contentBackground">#fdfdfd</color>
     <color name="separator">#8cc4ea</color>
+    <color name="black">#000000</color>
 </resources>
