@@ -1,25 +1,31 @@
 package com.example.delllatitude5490.projet_tdm
 
+import android.app.Fragment
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.util.Log
-import android.widget.LinearLayout
+import SettingsScreen
 
 class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
-
-        val rv = findViewById<RecyclerView>(R.id.recyclerView)
-        rv.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
-
-        val adapter = CustomAdapter(DemoData.categories)
-        rv.adapter = adapter
-
-        Log.e("message", "heeeere98")
-
+        var fragment: Fragment = SettingsScreen()
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        if (savedInstanceState == null) {
+            fragmentTransaction.add(R.id.relative_layout, fragment, "settings_fragment")
+            fragmentTransaction.commit()
+        } else {
+            fragment = fragmentManager.findFragmentByTag("settings_fragment")
+        }
     }
+
+    override fun onBackPressed() {
+        startActivity(Intent(this, MainActivity::class.java))
+    }
+
+
 }
+
+

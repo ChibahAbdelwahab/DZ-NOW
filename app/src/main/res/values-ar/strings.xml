@@ -12,4 +12,6 @@
     <string name="others">آخر</string>
     <string name="saved">حفظ</string>
     <string name="select_categories">اختر الفئات</string>
+    <string name="ChooseLanguage">لغة التطبيق</string>
+
 </resources>
