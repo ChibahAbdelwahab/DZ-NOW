@@ -1,10 +1,10 @@
+package com.example.delllatitude5490.projet_tdm
+
 import android.os.Bundle
 import android.preference.CheckBoxPreference
 import android.preference.Preference
 import android.preference.PreferenceCategory
 import android.preference.PreferenceFragment
-import com.example.delllatitude5490.projet_tdm.DemoData
-import com.example.delllatitude5490.projet_tdm.R
 
 class SettingsScreen : PreferenceFragment() {
 

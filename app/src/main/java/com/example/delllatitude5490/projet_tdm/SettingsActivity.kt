@@ -4,7 +4,7 @@ import android.app.Fragment
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import SettingsScreen
+import android.view.Menu
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -23,6 +23,11 @@ class SettingsActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         startActivity(Intent(this, MainActivity::class.java))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.settings_menu, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
 
