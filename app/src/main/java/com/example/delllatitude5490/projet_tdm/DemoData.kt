@@ -1,11 +1,6 @@
 package com.example.delllatitude5490.projet_tdm
 
-import android.util.Log
-import org.json.JSONArray
-import java.io.BufferedReader
-import java.io.File
 import java.util.*
-import org.json.JSONObject
 
 class DemoData {
 
@@ -13,21 +8,20 @@ class DemoData {
         var list = ArrayList<Article>()
         var categories = ArrayList<Category>()
         init {
-            categories.add(Category(App.context!!.getString(R.string.sport),true,R.drawable.img1));
+            categories.add(Category(App.context!!.getString(R.string.sport),true,R.drawable.img1))
             categories.add(Category(App.context!!.getString(R.string.technologie),true,R.drawable.img1))
             categories.add(Category(App.context!!.getString(R.string.medecine),true,R.drawable.img1))
             categories.add(Category(App.context!!.getString(R.string.economie),true,R.drawable.img1))
-            categories.add(Category(App.context!!.getString(R.string.politique),true,R.drawable.img1))
-            categories.add(Category(App.context!!.getString(R.string.others),true,R.drawable.img1))
+            categories.add(Category(App.context!!.getString(R.string.politique),false,R.drawable.img1))
+            categories.add(Category(App.context!!.getString(R.string.others),false,R.drawable.img1))
         }
 
         fun data(p0: Int): ArrayList<Article> {
             if (list.isEmpty()) loadData()
-            //TODO Implement a filter
-            return ArrayList<Article>(list.filter { s -> s.category.equals(p0.toString()) })
+            return ArrayList(list.filter { s -> s.category == p0.toString() })
         }
 
-        fun loadData() {
+        private fun loadData() {
             list.add(
                 Article(
                     1,

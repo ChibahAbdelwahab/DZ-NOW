@@ -22,7 +22,7 @@ class ArticleFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         defaultList = arguments?.getParcelableArrayList<Article>("data")!!
         list = ArrayList(defaultList)
-        var view = inflater!!.inflate(R.layout.fragment_article, container, false)
+        var view = inflater.inflate(R.layout.fragment_article, container, false)
         adapter = ArticleListAdapter(activity!!.baseContext, list, clickListener = View.OnClickListener {
             val itemPosition = view.recyclerView.getChildLayoutPosition(it)
             val item = list[itemPosition]

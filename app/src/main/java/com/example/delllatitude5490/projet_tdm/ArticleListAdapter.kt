@@ -17,7 +17,7 @@ class ArticleListAdapter(
 ) : RecyclerView.Adapter<ArticleListAdapter.ArticleViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ArticleViewHolder {
-        val v = LayoutInflater.from(p0?.context).inflate(R.layout.customlistitem, p0, false)
+        val v = LayoutInflater.from(p0.context).inflate(R.layout.customlistitem, p0, false)
         return ArticleViewHolder(v)
 
     }
@@ -28,17 +28,17 @@ class ArticleListAdapter(
 
     override fun onBindViewHolder(p0: ArticleViewHolder, p1: Int) {
         val article: Article = list[p1]
-        p0?.title.text = article.title
-        p0?.date.text = article.date
-        p0?.content.text = article.content
-        p0?.image.setImageDrawable(context.getDrawable(article.imageView))
+        p0.title.text = article.title
+        p0.date.text = article.date
+        p0.content.text = article.content
+        p0.image.setImageDrawable(context.getDrawable(article.imageView))
         if (article.saved == "true"){
-            p0?.bookmark.visibility = View.VISIBLE
+            p0.bookmark.visibility = View.VISIBLE
         }
         else
-            p0?.bookmark.setVisibility(View.INVISIBLE)
+            p0.bookmark.setVisibility(View.INVISIBLE)
 
-        p0?.itemView.setOnClickListener(clickListener)
+        p0.itemView.setOnClickListener(clickListener)
     }
 
     class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
