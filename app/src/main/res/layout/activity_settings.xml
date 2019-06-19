@@ -6,7 +6,6 @@
                                              android:padding="5dp"
                                              android:layout_gravity="center">
 
-
     <include layout="@layout/activity_content"/>
 
 
