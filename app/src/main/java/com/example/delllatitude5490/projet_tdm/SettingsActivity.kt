@@ -19,6 +19,8 @@ class SettingsActivity : AppCompatActivity() {
         } else {
             fragment = fragmentManager.findFragmentByTag("settings_fragment")
         }
+        actionBar.setDisplayShowTitleEnabled(true);
+        setTitle(getString(R.string.preferences));
     }
 
     override fun onBackPressed() {

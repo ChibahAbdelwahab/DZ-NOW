@@ -141,6 +141,7 @@
 
     <string name="pref_title_sync_frequency" translatable="false">Sync frequency</string>
     <string name="Preferences">Preferences</string>
+    <string name="preferences">Préferences</string>
     <string-array name="pref_sync_frequency_titles">
         <item>15 minutes</item>
         <item>30 minutes</item>
