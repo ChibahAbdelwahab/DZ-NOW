@@ -1,3 +1,5 @@
+package com.example.delllatitude5490.projet_tdm
+
 import android.os.Bundle
 import android.preference.CheckBoxPreference
 import android.preference.Preference

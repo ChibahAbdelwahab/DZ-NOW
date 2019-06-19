@@ -67,7 +67,6 @@ class MainActivity : AppCompatActivity() {
                 fab.backgroundTintList = ColorStateList.valueOf(Color.LTGRAY)
             for (item in adapter.lstFragment) {
                 item.showOnlySaved(clicked)
-                adapter.notifyDataSetChanged()
             }
         }
     }
